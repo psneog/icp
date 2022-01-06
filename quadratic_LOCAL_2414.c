@@ -1,11 +1,6 @@
 /******************************************************************************
-<<<<<<< HEAD
 Program to calculate the roots of a quadratic equation
 of the form a*x^2 + b*x + c = 0
-=======
-Program to solve a quadratic equations 
-of the form a*x^2 + b*x+ c = 0
->>>>>>> 783b37efbbc30e3b8a6a4fed3509783a3b6070d6
 *******************************************************************************/
 #include <stdio.h>
 #include <math.h>
