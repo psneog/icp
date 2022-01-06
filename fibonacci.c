@@ -1,36 +1,34 @@
-/*
- ============================================================================
- Name        : series.c
- Author      : p s neog
- Version     :0.1
- Copyright   : Your copyright notice
- Description : fibonacci series
- ============================================================================
- */
+/********************************************
+Program to generate fibonacci numbers
+*********************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
+# include <stdio.h>
 
-int main(void) {
-
-	int n = 0;		// no upto which we need the series
-	int this_term = 1;     // current no.
-	int previous_term = 0;  // term before
-	int next_term = 0;  // next one
-
-	int i = 0;
-
-	//printf("Upto: ");
+void main() {
+	
+	int fib = 0;
+	int fib_prev = 2;
+	int fib_prev_prev = 1;
+	int i = 3;
+	int n = 0;
+	
+	printf("Input n: ");
 	scanf("%d", &n);
-
-	printf("i  previous_term    this_term    next_term\n");
-
-	while (i <= n) {
-		printf("%d %10d  %10d  %10d\n", i, previous_term, this_term, next_term);
-		next_term = this_term + previous_term;
-		previous_term = this_term;
-		this_term = next_term;
-		i++;
-	}
-
+	
+	// display first 2 fibonacci numbers
+	printf("1 2 ");
+	
+	while(i <= n) {
+	
+	    fib = fib_prev + fib_prev_prev;
+	    printf("%d ", fib);
+	    
+	    fib_prev_prev = fib_prev;
+	    fib_prev = fib;
+	    i++;
+	} // while
+	
+	printf("\nThanks!\n");
+	
+	return;
 }
