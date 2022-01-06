@@ -4,11 +4,11 @@ Program to calculate grades of students
 Marks range	Grade	Code
 100 - 94	AA	1
 93 - 87 	AB	2
-86 - 80	BB	3 
-79 - 73	BC	4
-72 - 65	CC	5
+86 - 80		BB	3 
+79 - 73		BC	4
+72 - 65		CC	5
 64 - 57 	CD	6
-56 - 50	DD	7
+56 - 50		DD	7
 Below 50	F	8
 
 First we'll calculate codes given a mark inside
