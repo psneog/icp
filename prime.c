@@ -22,7 +22,7 @@ void main() {
 	
 	// test for divisibility of n by i
 	// by verying i from 2 to n-1
-	while( (i < n) && flag) {
+	while( (i < n/2) && flag) {
 	    
 	    // divisibility test 	   
 	    if (n % i == 0) {
