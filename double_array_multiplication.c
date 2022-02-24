@@ -46,6 +46,12 @@ void main() {
 	    printf("\n");
 	}
 	
+	// Initialize array c to 0
+	for(i=0; i < M; i++) 
+		for(j=0; j < P; j++)
+			c[i][j] = 0;
+	 
+	
 	// multiply them
 	// iterate thrugh rows and columns
 	// of matrix c
