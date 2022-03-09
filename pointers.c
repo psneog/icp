@@ -44,7 +44,7 @@ void swap(int *x, int *y) {
 }
 
 
-void main() {
+void swap_demo() {
 	
     int p = 10, q = 20;
     
@@ -57,3 +57,15 @@ void main() {
     
 	return;
 }
+
+
+void main() {
+
+	void (*funcptr)();  	// pointer to a function
+	funcptr = &swap_demo;
+	funcptr();
+	return;
+}
+
+
+
