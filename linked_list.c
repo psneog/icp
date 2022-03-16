@@ -114,15 +114,83 @@ void display_list(struct node *list) {
 		
 	return;
 }
-								
+
+// Display a list	 
+void examine_list(struct node *list) {
+
+	struct node *cursor;		// pointer to move through
+								// the elements of list
 	
+	int count = 1;				// Node counter
+				
+	// recurse cursore through the elements on the list
+	// from head to tail (until next is NULL)				
+	for(cursor = list; cursor != NULL; cursor = cursor->next, count++) {
+		printf("\n====== Node %d ======\n", count);
+		examine_node(cursor);
+	}
+	return;
+}							
+
+// Adds a node
+// Inputs:
+//		list: the list head
+//		inf: (int) info 
+//		pos: (int) position at which the new
+//				node is to be added.
+//				if pos > the number of nodes of the list
+//				we add the new info at the end of the list.
+void add_node(struct node *list, int inf, int pos) {
+
+	struct node *cursor;
+	struct node *tmp;
+	int count;
+	
+	// creates new node
+	tmp = create_node(inf);			
+		
+	// We will iterate through list using cursor, while 
+	// at the same time increasing node count by 1
+	// until count == pos or cursor->next == NULL
+	for(count = 1, cursor = list; 
+		count < pos && cursor->next != NULL;
+		cursor = cursor->next, count++);
+	
+	
+	if (cursor->next == NULL ) { 	
+		// i.e. we are at the last node
+		// or pos >= length of list
+		// just add tmp to the end
+		cursor->next = tmp;
+	} else {
+		// i.e. pos is within the range of the 
+		// list length 
+		// it means cursor is at pos-1
+		// we replace cursore->next with tmp
+		// pushing cursor->next to tmp->next
+		tmp->next = cursor->next; 
+		cursor->next = tmp;
+	}
+	
+	return;
+}	
+	  
+	  
+	  
 
 void main() {
 	
 	struct node *list = NULL;
-	int array[4] = {10, 20, 30, 40};
+	int array[] = {10, 20, 30, 40};
+	int p;
 	
 	list = create_list_from_array(array, 4);
+	display_list(list);
+	
+	printf("\n\n>>>> Adding node \n");
+	printf("Pos: ");
+	scanf("%d", &p);
+	add_node(list, 100, p);
 	display_list(list);
 	
 	return;
